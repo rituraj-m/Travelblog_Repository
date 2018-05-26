@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="h2_embedded-1639b1922b0-11033eb7e0d647b7" provider="generic" driver="h2_embedded" name="H2 - blog_Travel_db" save-password="true" show-system-objects="true" read-only="false">
+		<connection server="" database="mem:blog_Travel_db" url="jdbc:h2:mem:blog_Travel_db" user="sa" type="dev"/>
+	</data-source>
+	<filters/>
+</data-sources>

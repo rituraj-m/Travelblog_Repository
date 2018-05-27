@@ -3,5 +3,24 @@
 	<data-source id="h2_embedded-1639b1922b0-11033eb7e0d647b7" provider="generic" driver="h2_embedded" name="H2 - blog_Travel_db" save-password="true" show-system-objects="true" read-only="false">
 		<connection server="" database="mem:blog_Travel_db" url="jdbc:h2:mem:blog_Travel_db" user="sa" type="dev"/>
 	</data-source>
+	<data-source id="mysql5-163a09df286-3591f8f8a6ed1925" provider="mysql" driver="mysql5" name="MySQL - world" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="world" url="jdbc:mysql://localhost:3306/world" user="admin" password="EgALKU8jpQ==" home="C:\Program Files\MySQL\MySQL Server 8.0" type="dev">
+			<property name="connectTimeout" value="20000"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="implementation" value="jsch"/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="CONFIG" id="mysql_ssl" enabled="false" save-password="false">
+				<property name="ssl.public.key.retrieve" value="false"/>
+				<property name="ssl.verify.server" value="true"/>
+				<property name="ssl.require" value="false"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="false">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+	</data-source>
 	<filters/>
 </data-sources>

@@ -65,7 +65,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/home")
-                .permitAll()
+                .failureUrl("/login?error=true")//
+            	.usernameParameter("username")//
+            	.passwordParameter("password")
+            	.permitAll()
                 .and()
                 .logout()
                 .permitAll()
@@ -102,5 +105,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    
+    
 
 }

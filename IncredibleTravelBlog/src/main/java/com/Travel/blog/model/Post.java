@@ -1,6 +1,6 @@
 package com.Travel.blog.model;
 
-import org.hibernate.annotations.CreationTimestamp;
+//import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name = "post")
+@Table(name = "trpost")
 public class Post {
 
     @Id
@@ -28,7 +28,7 @@ public class Post {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date", nullable = false, updatable = false)
-    @CreationTimestamp
+    //@CreationTimestamp
     private Date createDate;
 
     @ManyToOne

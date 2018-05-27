@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "role")
+@Table(name = "trrole")
 public class Role {
 
     @Id
@@ -12,7 +12,7 @@ public class Role {
     @Column(name = "role_id")
     private Long id;
 
-    @Column(name = "role", unique = true)
+    @Column(name = "role")
     private String role;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles")

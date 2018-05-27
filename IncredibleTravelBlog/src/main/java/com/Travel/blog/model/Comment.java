@@ -1,6 +1,6 @@
 package com.Travel.blog.model;
 
-import org.hibernate.annotations.CreationTimestamp;
+//import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -22,7 +22,7 @@ public class Comment {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date", nullable = false, updatable = false)
-    @CreationTimestamp
+    //@CreationTimestamp
     private Date createDate;
 
     @ManyToOne

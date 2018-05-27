@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "user")
+@Table(name = "truser")
 public class User {
 
     @Id
@@ -17,35 +17,35 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", nullable = false, insertable = true, updatable = true)
     @Email(message = "*Please provide a valid Email")
     @NotEmpty(message = "*Please provide an email")
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, insertable = true, updatable = true)
     @Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide your password")
     @JsonIgnore
     private String password;
 
-    @Column(name = "username", nullable = false, unique = true)
+    @Column(name = "username", nullable = false, insertable = true, updatable = true)
     @Length(min = 5, message = "*Your username must have at least 5 characters")
     @NotEmpty(message = "*Please provide your name")
     private String username;
 
-    @Column(name = "name")
+    @Column(name = "name", insertable = true, updatable = true)
     @NotEmpty(message = "*Please provide your name")
     private String name;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", insertable = true, updatable = true)
     @NotEmpty(message = "*Please provide your last name")
     private String lastName;
 
-    @Column(name = "active", nullable = false)
+    @Column(name = "active", nullable = false, insertable = true, updatable = true)
     private int active;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @JoinTable(name = "truser_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
     @OneToMany(mappedBy = "user")
